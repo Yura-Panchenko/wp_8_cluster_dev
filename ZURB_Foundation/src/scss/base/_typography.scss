@@ -1,0 +1,100 @@
+// Typography
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.h {
+  display: block;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+.h {
+  line-height: 1.1666667;
+
+  .header-banner & {
+    margin-bottom: rem-calc(5);
+  }
+
+  .header-banner &,
+  .hero-city-page &,
+  .bg-primary-color &,
+  .image-block & {
+    color: inherit;
+  }
+
+  a {
+    @include link-inherit($success-color);
+    text-decoration: none;
+
+    .post-box & {
+      text-decoration: none;
+    }
+  }
+}
+
+h1, .h1 {
+  line-height: 1.2777778;
+  margin-bottom: rem-calc(10);
+  word-break: break-all;
+
+  @include breakpoint(large) {
+    margin-bottom: rem-calc(15);
+  }
+
+  @include breakpoint(xlarge) {
+    margin-bottom: rem-calc(20);
+  }
+
+  .text-large & {
+    margin-bottom: rem-calc(8);
+  }
+
+  .hero-city-page & {
+    line-height: 1.3888889;
+  }
+}
+
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-weight: $global-weight-medium;
+}
+
+h4, .h4 {
+  margin-bottom: rem-calc(9);
+
+  .hero-city-page & {
+    margin-bottom: rem-calc(16);
+  }
+}
+
+p {
+  @include breakpoint(large) {
+    margin-bottom: $global-margin-md;
+  }
+
+  @include breakpoint(xlarge) {
+    margin-bottom: $global-margin-lg;
+  }
+}
+
+a {
+  @include animate(color background border-color opacity box-shadow, $global-animation-speed, linear);
+}
+
+a b,
+a strong,
+b a,
+strong a {
+  font-weight: $global-weight-medium;
+}

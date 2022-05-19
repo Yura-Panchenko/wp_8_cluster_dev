@@ -1,0 +1,104 @@
+// forms
+form,
+fieldset {
+  margin: 0;
+  padding: 0;
+  border-style: none;
+}
+
+form,
+form .callout,
+.callout form {
+  .button,
+  button,
+  input[type='button'],
+  input[type='reset'],
+  input[type='file'],
+  input[type='submit'] {
+    max-width: 480px;
+
+    @include breakpoint(xmedium down) {
+      max-width: none !important;
+    }
+  }
+}
+
+input[type='text'],
+input[type='tel'],
+input[type='email'],
+input[type='search'],
+input[type='password'],
+input[type='url'],
+input[type='date'],
+textarea {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  box-sizing: border-box;
+  border-radius: $global-radius;
+  max-width: $input-max-width;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input[type='search']::-webkit-search-cancel-button {-webkit-appearance: none;}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+}
+
+select {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  background: $select-custom-background;
+  border-radius: $global-radius;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  height: 50px;
+  line-height: 50px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+textarea {
+  resize: vertical;
+  vertical-align: top;
+  height: 120px;
+  min-height: 120px;
+}
+
+button,
+input[type='button'],
+input[type='reset'],
+input[type='file'],
+input[type='submit'] {
+  @include animate(color background border opacity box-shadow, $animation-speed, linear);
+  @extend .button;
+  @extend .success;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  border-radius: $global-radius !important;
+  cursor: pointer;
+  height: 50px;
+  line-height: 50px;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  max-width: $input-max-width;
+
+  &:hover {
+    // background: $submit-hover-background;
+    // color: $submit-hover-color;
+  }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  opacity: 0;
+
+  .loaded & {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,208 @@
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  max-height: 1000000px;
+}
+
+//- HTML5 display-role reset for older browsers
+main,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  min-width: $global-min-width;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: $global-font-size-small;
+
+  @include breakpoint(medium) {
+    font-size: $global-font-size-medium;
+  }
+
+  @include breakpoint(large) {
+    font-size: $global-font-size-large;
+  }
+}
+
+// adaptive images
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+// google map fix
+.gm-style img {
+  max-width: none;
+}
+
+iframe {
+  @include breakpoint(medium down) {
+    width: 100%;
+  }
+}
+
+.resize-active * {
+  transition: none !important;
+}
+
+ul:not([class]) {
+  @extend %listreset;
+  margin: rem-calc(0 0 18);
+
+  @include breakpoint(medium) {
+    margin-bottom: rem-calc(29);
+  }
+
+  li {
+    padding: rem-calc(0 0 0 10);
+    position: relative;
+
+    @include breakpoint(large) {
+      padding-left: rem-calc(20);
+    }
+
+    + li {
+      margin-top: rem-calc(10);
+    }
+
+    &:before {
+      @include size(rem-calc(4));
+      content: "";
+      position: absolute;
+      left: 0;
+      top: rem-calc(7);
+      background: $success-color;
+      border-radius: 50%;
+
+      @include breakpoint(large) {
+        @include size(rem-calc(6));
+        top: rem-calc(9);
+      }
+    }
+  }
+}
+
+table {
+  font-size: rem-calc(14);
+  margin: 0;
+
+  @include breakpoint(medium) {
+    font-size: rem-calc(16);
+  }
+
+  thead,
+  tbody,
+  tfoot,
+  th,
+  td {
+    border: $table-border;
+  }
+
+  th,
+  thead td,
+  tfoot th,
+  tfoot td {
+    font-weight: 500;
+    font-size: rem-calc(14);
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(18);
+    }
+  }
+
+  thead {
+    background-color: transparent;
+
+    + tbody {
+      tr:nth-child(odd) {
+        background-color: transparent;
+      }
+
+      tr:nth-child(even) {
+        background-color: #fdfdfd;
+      }
+    }
+  }
+
+  th {
+    text-align: left;
+
+    @include breakpoint(medium) {
+      padding: rem-calc(12 6 12 35);
+    }
+
+    &:first-child {
+      width: 9.4%;
+    }
+
+    &:nth-child(2) {
+      width: 21.1%;
+    }
+
+    &:last-child {
+      width: rem-calc(120);
+
+      @include breakpoint(medium) {
+        padding-right: rem-calc(35);
+        width: rem-calc(210);
+      }
+    }
+  }
+
+  td {
+    @include breakpoint(medium) {
+      padding: rem-calc(12 6 12 35);
+    }
+
+    &:last-child {
+      @include breakpoint(medium) {
+        padding-right: rem-calc(35);
+      }
+    }
+  }
+
+  .button {
+    margin: 0;
+    font-size: rem-calc(12);
+    padding: rem-calc(8 10);
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(16);
+      padding: rem-calc(14 29);
+    }
+  }
+
+  b {
+    font-weight: 500;
+  }
+}
+
+a[x-apple-data-detectors] {
+  color: inherit !important;
+  text-decoration: none !important;
+  font-size: inherit !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+}

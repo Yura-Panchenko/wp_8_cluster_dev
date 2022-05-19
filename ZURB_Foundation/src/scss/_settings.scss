@@ -1,0 +1,253 @@
+// @import 'vendors/foundation/foundation-sites/scss/util/util';
+
+// 1. Global
+// ---------
+
+$base-min-width: 320px;
+
+$global-font-size:          100%;
+$global-font-size-small:          rem-calc(14);
+$global-font-size-medium:         rem-calc(15);
+$global-font-size-large:          rem-calc(16);
+
+$global-lineheight:         1.625;
+$global-width:              rem-calc(1236);
+$global-min-width: 320px;
+
+$global-weight-light: 300;
+$global-weight-normal: 400;
+$global-weight-medium: 500;
+$global-weight-bold: 700;
+$global-weight-black: 900;
+
+$foundation-palette: (
+  primary: #14357a,
+  secondary: #767676,
+  success: #00772f,
+  warning: #f5a623,
+  alert: #d0021b,
+);
+
+$gray: #666;
+$light-gray: #e6e6e6;
+$medium-gray: #4a4a4a;
+$dark-gray: #333;
+
+$black: #000;
+$white: #fff;
+
+$body-font-color: $medium-gray;
+
+$body-font-family:          'Roboto', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+$minor-font-family:         Georgia, "Times New Roman", Times, serif;
+
+$global-margin: 1rem;
+$global-margin-md: 1.3125rem;
+$global-margin-lg: 1.625rem;
+
+$global-border-color: #e7e7e7;
+
+$global-menu-padding: 0.8125rem .75rem;
+
+$global-radius: 2px;
+$alt-radius: 4px;
+
+$global-animation-speed: .25s;
+
+@include add-foundation-colors;
+
+// 2. Breakpoints
+// --------------
+
+$breakpoints: (
+  small: 0,
+  xmedium: 480px,
+  medium: 768px,
+  large: 1024px,
+  xlarge: 1200px,
+  xxlarge: 1360px,
+);
+$print-breakpoint: large;
+$breakpoint-classes: (small xmedium medium large xlarge xxlarge);
+
+// 3. The Grid
+// -----------
+$grid-column-gutter: (
+  small: 20px,
+  medium: 30px,
+);
+
+
+// 4. Base Typography
+// ------------------
+// $header-font-family: $body-font-family;
+$header-font-weight: $global-weight-bold;
+$header-margin-bottom: 0.625rem;
+$header-color: #12327f;
+$header-styles: (
+  small: (
+    'h1': ('font-size': 26),
+    'h2': ('font-size': 23),
+    'h3': ('font-size': 20),
+    'h4': ('font-size': 18),
+    'h5': ('font-size': 16),
+    'h6': ('font-size': 14),
+  ),
+  medium: (
+    'h1': ('font-size': 32),
+    'h2': ('font-size': 28),
+    'h3': ('font-size': 24),
+    'h4': ('font-size': 20),
+    'h5': ('font-size': 18),
+    'h6': ('font-size': 15),
+  ),
+  large: (
+    'h1': ('font-size': 36),
+    'h2': ('font-size': 32),
+    'h3': ('font-size': 28),
+    'h4': ('font-size': 24),
+    'h5': ('font-size': 20),
+    'h6': ('font-size': 18),
+  ),
+);
+
+$paragraph-lineheight: inherit;
+$anchor-color: $success-color;
+// $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
+$anchor-color-hover: $primary-color;
+
+$hr-border: 1px solid $global-border-color;
+$blockquote-border: 1px solid $global-border-color;
+
+
+$nav-link-color: $dark-gray;
+
+// 5. Typography Helpers
+// ---------------------
+
+$lead-lineheight: inherit;
+$subheader-font-weight: $global-weight-medium;
+
+// 7. Accordion
+// ------------
+
+$accordion-item-padding: .875rem .75rem;
+$accordion-item-padding-lg: .75rem 1rem;
+
+// 10. Breadcrumbs
+// ---------------
+
+$breadcrumbs-item-font-size: rem-calc(12);
+$breadcrumbs-item-color: $gray;
+$breadcrumbs-item-color-current: $gray;
+$breadcrumbs-item-separator-item: '>';
+$breadcrumbs-item-separator-color: $gray;
+
+// 11. Button
+// ----------
+
+$button-font-size: 18px;
+$button-font-weight: $global-weight-bold;
+$button-line-height: 1.16666667;
+// $button-padding: 0.8125rem 1rem;
+$button-padding: 1rem;
+$button-padding-lg: 1.125rem 1rem;
+// $button-padding-xlg: 1.125rem 1.5rem 1.0625rem;
+$button-padding-xlg: 1.25rem 1.5rem 1.1875rem;
+$button-background: $primary-color;
+$button-background-hover: scale-color($button-background, $lightness: 0%) !default;
+$button-color: $white;
+$button-color-alt: $white;
+$alt-button-radius: $alt-radius;
+$button-hollow-border-width: 2px;
+
+$button-hollow-padding: 0.9375rem 1rem;
+$button-hollow-padding-lg: 1rem;
+$button-hollow-padding-xlg: 1.125rem 1.5rem 1.0625rem;
+
+$button-sizes: (
+  tiny: 0.6rem,
+  small: 0.75rem,
+  default: 1rem,
+  large: 1.25rem,
+);
+
+$button-background-hover-lightness: 0%;
+$button-hollow-hover-lightness: 0%;
+$button-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+$button-responsive-expanded: false;
+
+$button-min-width: 180px;
+$button-min-width-alt: 220px;
+
+
+// 13. Callout
+// -----------
+
+$callout-padding: rem-calc(17 12 10);
+$callout-padding-md: rem-calc(27 17 17);
+$callout-padding-lg: rem-calc(40 30 30);
+$callout-padding-xlg: rem-calc(51 35 43);
+
+// 19. Flexbox Utilities
+// ---------------------
+
+// $flex-source-ordering-count: 6;
+$flexbox-responsive-breakpoints: true;
+
+// 20. Forms
+// ---------
+
+$fieldset-border: none;
+$fieldset-margin: rem-calc(15 0);
+$form-spacing: rem-calc(15);
+$helptext-font-size: rem-calc(12);
+$form-label-line-height: 1.57142857;
+$select-background: #fdfdfd;
+$select-custom-background: #fdfdfd linear-gradient(180deg, #f7f7f7 0%, #fdfdfd 100%);
+$select-custom-color: #333;
+$select-triangle-color: $black;
+$input-color: $black;
+$input-placeholder-color: #8f8f8f;
+$input-font-size: rem-calc(14);
+$input-line-height: 1.64285715;
+$input-background: #fdfdfd;
+$input-border: 1px solid #dcdcdc;
+$input-border-focus: 1px solid #dcdcdc;
+$input-padding: rem-calc(15 15 13);
+$input-shadow: none;
+$input-shadow-focus: none;
+$input-radius: $global-radius;
+$form-button-radius: $global-radius;
+
+$input-max-width: 480px;
+
+// 50. Table
+// ---------
+
+$table-striped-background: #f7f7f7;
+$table-stripe: odd;
+$table-head-background: $white;
+
+
+// 53. Title Bar
+// -------------
+
+$titlebar-background: $primary-color;
+$titlebar-icon-color-hover: $white;
+$titlebar-bg-color-hover: $gray;
+
+
+// 55. Top Bar
+// -----------
+
+$topbar-background: $white;
+$topbar-unstack-breakpoint: xlarge;
+
+// 56. Xy Grid
+// -----------
+
+$table-border: 0;
+$table-padding: rem-calc(10 8);
+$table-background: #f7f7f7;
+$table-striped-background: #fdfdfd;

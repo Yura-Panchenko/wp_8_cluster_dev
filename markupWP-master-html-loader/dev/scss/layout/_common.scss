@@ -1,0 +1,16 @@
+[id="wrapper"] {
+  width: 100%;
+  overflow: hidden;
+  background: $base-background-color;
+}
+
+[id="main"] {
+  flex-grow: 1;
+}
+
+.container {
+  @extend %clearfix;
+  max-width: $max-width-center-container;
+  padding: $padding-container;
+  margin: 0 auto;
+}
